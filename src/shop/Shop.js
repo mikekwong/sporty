@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { CategoryNavigation } from "./CategoryNavigation";
-import { ProductList } from "./ProductList";
+import CategoryNavigation from "./CategoryNavigation";
+import ProductList from "../ProductList";
 
 export default class Shop extends Component {
   render() {

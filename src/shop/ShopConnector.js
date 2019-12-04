@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { loadData } from "../data/ActionCreators";
 import { DataTypes } from "../data/Types";
-import { Shop } from "./Shop";
+import Shop from "./Shop";
 
 const filterProducts = (products = [], category) =>
   !category || category === "All"
@@ -17,6 +17,7 @@ class ShopConnector extends Component {
   }
 
   render() {
+    // https://tylermcginnis.com/react-router-pass-props-to-components/
     return (
       <Switch>
         <Route
