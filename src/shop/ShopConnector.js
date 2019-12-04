@@ -22,10 +22,11 @@ class ShopConnector extends Component {
       <Switch>
         <Route
           path="/shop/products/:category?"
+          // routeProps = array of objects from api for each category [{match, location, history}]
           render={routeProps => (
             <Shop
               {...this.props}
-              {...routeProps}
+              // {...routeProps}
               products={filterProducts(
                 this.props.products,
                 routeProps.match.params.category

@@ -6,7 +6,8 @@ export default class ToggleLink extends Component {
     return (
       <Route
         path={this.props.to}
-        exact={this.props.exact}
+        // exact={this.props.exact}
+        // routeProps = array of objects from api for each category [{match, location, history}]
         children={routeProps => {
           const baseClasses = this.props.className || "m-2 btn btn-block";
           const activeClass = this.props.activeClass || "btn-primary";
