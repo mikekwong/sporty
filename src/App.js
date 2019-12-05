@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SportsStoreDataStore } from "./data/DataStore";
+import { SportyDataStore } from "./data/DataStore";
 import { Provider } from "react-redux";
 import {
   BrowserRouter as Router,
@@ -12,7 +12,7 @@ import ShopConnector from "./shop/ShopConnector";
 export default class App extends Component {
   render() {
     return (
-      <Provider store={SportsStoreDataStore}>
+      <Provider store={SportyDataStore}>
         <Router>
           <Switch>
             <Route path="/shop" component={ShopConnector} />

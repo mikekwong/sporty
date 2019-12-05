@@ -5,6 +5,7 @@ import CartDetailsRows from "./CartDetailsRows";
 export default class CartDetails extends Component {
   getLinkClasses = () =>
     `btn btn-secondary m-1 ${this.props.cartItems === 0 ? "disabled" : ""}`;
+
   render() {
     return (
       <div className="m-3">
