@@ -10,6 +10,7 @@ import {
   removeFromCart,
   clearCart,
 } from "../data/CartActionCreators";
+import CartDetails from "./CartDetails";
 
 const filterProducts = (products = [], category) =>
   !category || category === "All"
@@ -39,6 +40,11 @@ class ShopConnector extends Component {
               )}
             />
           )}
+        />
+        <Route
+          path="/shop/cart"
+          // CartDetails component receives props from the data store and the routing system
+          render={routeProps => <CartDetails {...this.props} {...routeProps} />}
         />
         <Redirect to="/shop/products" />
       </Switch>
