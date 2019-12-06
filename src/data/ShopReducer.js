@@ -12,19 +12,20 @@ export const ShopReducer = (storeData = {}, action) => {
         // Which will determine when the user has mad a change that requires an HTTP req for more data
         [`${action.payload.dataType}_params`]: action.payload.params,
       };
-      break;
+
     case ActionTypes.DATA_SET_PAGESIZE:
       return { ...storeData, pageSize: action.payload };
-      break;
+
     case ActionTypes.DATA_SET_SORT_PROPERTY:
       return { ...storeData, sortKey: action.payload };
-      break;
     // case for adding order to data store
+
     case ActionTypes.DATA_STORE:
       if (action.payload.dataType === DataTypes.ORDERS) {
         return { ...storeData, order: action.payload.data };
       }
       break;
+
     default:
       return storeData;
   }

@@ -30,13 +30,10 @@ class ShopConnector extends Component {
     switch (routeProps.match.params.section) {
       case "products":
         return wrap(DataGetter, Shop);
-        break;
       case "cart":
         return wrap(CartDetails);
-        break;
       case "checkout":
         return wrap(Checkout);
-        break;
       case "thanks":
         return wrap(Thanks);
       default:
