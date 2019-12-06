@@ -1,10 +1,13 @@
 export const DataTypes = {
   PRODUCTS: "products",
   CATEGORIES: "categories",
+  ORDERS: "orders",
 };
 
 export const ActionTypes = {
   DATA_LOAD: "data_load",
+  // Action to store the orders
+  DATA_STORE: "data_store",
   // Set and Sort types will allow user to change settings for page views
   DATA_SET_SORT_PROPERTY: "data_set_sort",
   DATA_SET_PAGESIZE: "data_set_pagesize",

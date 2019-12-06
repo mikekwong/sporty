@@ -7,4 +7,6 @@ const port = 3500;
 export const RestUrls = {
   [DataTypes.PRODUCTS]: `${protocol}://${hostname}:${port}/api/products`,
   [DataTypes.CATEGORIES]: `${protocol}://${hostname}:${port}/api/categories`,
+  // Url to place orders
+  [DataTypes.ORDERS]: `${protocol}://${hostname}:${port}/api/orders`,
 };

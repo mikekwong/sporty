@@ -16,6 +16,7 @@ export const CartReducer = (storeData = {}, action) => {
       newStore.cartItems += q;
       newStore.cartPrice += p.price * q;
       return newStore;
+      break;
 
     case ActionTypes.CART_UPDATE:
       newStore.cart = newStore.cart.map(item => {
@@ -29,6 +30,7 @@ export const CartReducer = (storeData = {}, action) => {
         }
       });
       return newStore;
+      break;
 
     case ActionTypes.CART_REMOVE:
       let selection = newStore.cart.find(
@@ -38,9 +40,11 @@ export const CartReducer = (storeData = {}, action) => {
       newStore.cartPrice -= selection.quantity;
       newStore.cart = newStore.cart.filter(item => item !== selection);
       return newStore;
+      break;
 
     case ActionTypes.CART_CLEAR:
       return { ...storeData, cart: [], cartItems: 0, cartPrice: 0 };
+      break;
 
     default:
       return storeData;

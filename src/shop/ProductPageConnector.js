@@ -8,6 +8,8 @@ const mapStateToProps = dataStore => dataStore;
 
 const mapDispatchToProps = { setPageSize, setSortProperty };
 
+// mergeProps: https://react-redux.js.org/api/connect
+// make shallow copy of new object to return
 const mergeProps = (dataStore, actionCreators, router) => ({
   ...dataStore,
   ...router,

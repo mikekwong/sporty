@@ -10,9 +10,14 @@ export class RestDataSource {
   // Request parameters will be used to request pages and specify a category.
   // With 'params' as a parameter for axios, we can specify the query string for other filtering options
   // such as limit, sort, page, and category (see DataGetter component & ActionCreator component)
-  GetData = async (dataType, params) =>
-    await this.SendRequest("get", RestUrls[dataType], params);
+  GetData = (dataType, params) =>
+    this.SendRequest("get", RestUrls[dataType], params);
+
+  //new method for rest to receive the order object and sends it to the web service.
+  StoreData = (dataType, data) =>
+    this.SendRequest("post", RestUrls[dataType], {}, data);
   // Axios get request (can be done without .request)
   // https://github.com/axios/axios
-  SendRequest = (method, url, params) => Axios.request({ method, url, params });
+  SendRequest = (method, url, params, data) =>
+    Axios.request({ method, url, params, data });
 }
