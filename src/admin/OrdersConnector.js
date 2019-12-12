@@ -1,6 +1,6 @@
-import { graphql } from "react-apollo";
-import { orderSummaryQuery } from "./clientQueries";
-import { OrdersTable } from "./OrdersTable";
+import { graphql, compose } from "react-apollo";
+import { ordersSummaryQuery } from "./clientQueries";
+import OrdersTable from "./OrdersTable";
 
 const vars = {
   onlyShipped: false,

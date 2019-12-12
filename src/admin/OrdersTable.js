@@ -8,7 +8,9 @@ export default class OrdersTable extends Component {
       <h4 className="bg-info text-white text-center p-2">
         {this.props.totalSize} Orders
       </h4>
+
       <PaginationControls keys={["ID", "Name"]} {...this.props} />
+
       <table className="table table-sm table-striped">
         <thead>
           <tr>

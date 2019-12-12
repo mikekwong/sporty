@@ -1,7 +1,14 @@
 // Resolvers to implement schema in graphql service
 // https://github.com/typicode/lowdb
+
 const paginateQuery = (query, page = 1, pageSize = 5) =>
   query.drop((page - 1) * pageSize).take(pageSize);
+
+const product = ({ id }, { db }) =>
+  db
+    .get("products")
+    .getById(id)
+    .value();
 
 const products = ({ category }, { db }) => ({
   totalSize: () =>
@@ -58,4 +65,4 @@ const orders = ({ onlyUnshipped = false }, { db }) => ({
   orders: (...args) => resolveOrders(onlyUnshipped, ...args),
 });
 
-module.exports = { products, categories, orders };
+module.exports = { product, products, categories, orders };
