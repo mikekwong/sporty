@@ -1,4 +1,4 @@
-import { graphql, compose } from "react-apollo";
+import { graphql } from "react-apollo";
 import { ordersSummaryQuery } from "./clientQueries";
 import OrdersTable from "./OrdersTable";
 
